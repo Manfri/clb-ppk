@@ -69,9 +69,9 @@ section {
     text-align:center;
 }
 .Section-td {
-    width: 10%;
-    word-break:keep-all;  
-    white-space:nowrap
+    white-space: nowrap;
+    margin: 10px;
+    padding: 10px;
 }
 
 .TaskNature {
