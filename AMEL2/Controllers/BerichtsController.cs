@@ -270,7 +270,7 @@ namespace AMEL2.Controllers
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
             var bers = from s in db.Berichts select s;
-            bers = bers.Where(p => p.BN == 27 && p.Projekt == 141303);
+            bers = bers.Where(p => p.BN == 2 && p.Projekt == 170722);
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.Equals("All"))
@@ -282,31 +282,30 @@ namespace AMEL2.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 _searchString = searchString;
-                bers = bers.Where(p => p.s1.Contains(searchString));
+                bers = bers.Where(p => p.s1.Contains(searchString) || p.s2.Contains(searchString) || p.s3.Contains(searchString) || p.s4.Contains(searchString));
             }
             else
             {
                 if (!String.IsNullOrEmpty(_searchString))
                 {
-                    bers = bers.Where(p => p.s1.Contains(_searchString));
+                    bers = bers.Where(p => p.s1.Contains(_searchString) || p.s2.Contains(_searchString) || p.s3.Contains(_searchString) || p.s4.Contains(_searchString));
                 }
             }
 
             switch (sortOrder)
             {
                 case "s1_desc":
-                    bers = bers.OrderByDescending(s => s.s1);
+                    bers = bers.OrderByDescending(s => s.s4);
                     break;
             }
             return View(bers.ToList());
         }
-
 
         public ActionResult old_msa(string sortOrder, string searchString)
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
             var bers = from s in db.Berichts select s;
-            bers = bers.Where(p => p.BN == 28 && p.Projekt == 141303);
+            bers = bers.Where(p => p.BN == 2 && p.Projekt == 170722);
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.Equals("All"))
@@ -318,24 +317,59 @@ namespace AMEL2.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 _searchString = searchString;
-                bers = bers.Where(p => p.s1.Contains(searchString));
+                bers = bers.Where(p => p.s1.Contains(searchString) || p.s2.Contains(searchString) || p.s3.Contains(searchString) || p.s4.Contains(searchString));
             }
             else
             {
                 if (!String.IsNullOrEmpty(_searchString))
                 {
-                    bers = bers.Where(p => p.s1.Contains(_searchString));
+                    bers = bers.Where(p => p.s1.Contains(_searchString) || p.s2.Contains(_searchString) || p.s3.Contains(_searchString) || p.s4.Contains(_searchString));
                 }
             }
 
             switch (sortOrder)
             {
                 case "s1_desc":
-                    bers = bers.OrderByDescending(s => s.s1);
+                    bers = bers.OrderByDescending(s => s.s4);
                     break;
             }
             return View(bers.ToList());
         }
+
+        //public ActionResult old_msa(string sortOrder, string searchString)
+        //{
+        //    ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
+        //    var bers = from s in db.Berichts select s;
+        //    bers = bers.Where(p => p.BN == 2 && p.Projekt == 17);
+        //    if (!String.IsNullOrEmpty(searchString))
+        //    {
+        //        if (searchString.Equals("All"))
+        //        {
+        //            _searchString = String.Empty;
+        //            searchString = String.Empty;
+        //        }
+        //    }
+        //    if (!String.IsNullOrEmpty(searchString))
+        //    {
+        //        _searchString = searchString;
+        //        bers = bers.Where(p => p.s1.Contains(searchString));
+        //    }
+        //    else
+        //    {
+        //        if (!String.IsNullOrEmpty(_searchString))
+        //        {
+        //            bers = bers.Where(p => p.s1.Contains(_searchString));
+        //        }
+        //    }
+
+        //    switch (sortOrder)
+        //    {
+        //        case "s1_desc":
+        //            bers = bers.OrderByDescending(s => s.s1);
+        //            break;
+        //    }
+        //    return View(bers.ToList());
+        //}
 
 
         public ActionResult aab(string sortOrder, string searchString)       {
