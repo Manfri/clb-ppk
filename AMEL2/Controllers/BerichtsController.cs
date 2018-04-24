@@ -15,9 +15,10 @@ namespace AMEL2.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        
         // GET: Berichts        
         static string _searchString;
-       
+        
         public void ExcelExport_old_ademsr(string sortOrder, string searchString)
         {
             StringWriter sw = new StringWriter();

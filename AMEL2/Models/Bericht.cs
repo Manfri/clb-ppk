@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace AMEL2.Models
 {
@@ -71,5 +72,17 @@ namespace AMEL2.Models
         public string s58 { get; set; }
         public string s59 { get; set; }
         public string s60 { get; set; }
+
+        public List<SelectListItem> getListYesNo()
+        {
+            List<SelectListItem> listYesNo = new List<SelectListItem>();
+            var data = new[]{
+                 new SelectListItem{ Value="X",Text="X"},
+                 new SelectListItem{ Value="-",Text="-"},
+             };
+            listYesNo = data.ToList();
+            return listYesNo;
+        }
     }
+    
 }
