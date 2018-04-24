@@ -16,7 +16,9 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.BerichtID)
-
+    @Html.HiddenFor(model => model.Projekt)
+    @Html.HiddenFor(model => model.BN)
+    @Html.HiddenFor(model => model.IT)
 
     <div class="form-group">
         @Html.LabelFor(model => model.s1, "Anlage", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -161,6 +163,7 @@
             @Html.ValidationMessageFor(model => model.s18, "", new { @class = "text-danger" })
         </div>
     </div>
+    <!--
     <div class="form-group">
         @Html.LabelFor(model => model.Projekt, "Projekt", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -185,6 +188,7 @@
             @Html.ValidationMessageFor(model => model.IT, "", new { @class = "text-danger" })
         </div>
     </div>
+        -->
     @* onclick="location.href='@Url.Action("aab", "Berichts")';return false;" *@
 
     <div class="form-group">
