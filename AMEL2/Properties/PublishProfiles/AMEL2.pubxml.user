@@ -6,7 +6,7 @@ indem Sie diese MSBuild-Datei bearbeiten. Besuchen Sie "http://go.microsoft.com/
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAb5LL9/ro0UKo/qlwPOiF7QAAAAACAAAAAAAQZgAAAAEAACAAAABJ7Zkhv7INbW/LRdUft+g/tU0cyRbrlTNfeAV7Ho3mHQAAAAAOgAAAAAIAACAAAADjr4OIpZQTz/7+jEk0i00LMZkYF5s2VXRXZczJs2UGloAAAAAyAn8W4R8zucZzmQPeyHDhvMTetmilDLYt61AlKPMwOJzIF1cOfu3xKwLQ3pKTrrIkpmMWdM+kL8MiuGQCsV30MxE35QEDXo/YhBYaDw/F5uPDlDzVT+1Gw3Ss9laWi38X3kJQtUDfXwWhKFrQWf0fUsJ6D8l67e3yVwCsAtZkM0AAAAB26c9tJ/VW2N7m+by9T/8iklrJAHoBAHXxoHf/PKXZwL7mPcu0o5bQwmNP5vOmsw6ZoSGD/w3zWFYmY7heTH4a</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0b8Ehsli8EaiPaVRXLmOqQAAAAACAAAAAAADZgAAwAAAABAAAACWjE8KpYu/CgOwLzi3078lAAAAAASAAACgAAAAEAAAACGLtJk7s6jBVOIUA4pg0NqAAAAAuxMISWPNP23zprL9S9RVqoqAAZvFkLMZXEZarHZ4Y9ErMd+rHyU2e/HfWdg2mHTES1w33SuI4eWNqo5rb4V7Mnqx3AeScVFi+qrhddnIc9Iu4ADNgNb5ndgbqgazZax3PNDBS9Xnh4hAdEkNOfr2fWZdqwcc02nlegppIw+G+cQUAAAAy2BuF0rmycZZvbwcS1UE2ecEq8s=</EncryptedPassword>
     <_NewBackgroundProfile>False</_NewBackgroundProfile>
   </PropertyGroup>
 </Project>
