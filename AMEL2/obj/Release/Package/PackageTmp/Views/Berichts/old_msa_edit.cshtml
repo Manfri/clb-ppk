@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Messstellen Anzeige";
+    List<SelectListItem> listYesNo = Model.getListYesNo();
 }
 
 <h2>Messstellen Anzeige</h2>
@@ -82,7 +83,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.s8, "Ex-Schutz", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.s8, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.s8, listYesNo, new { @class = "form-control-dropdown-small" })
             @Html.ValidationMessageFor(model => model.s8, "", new { @class = "text-danger" })
         </div>
     </div>

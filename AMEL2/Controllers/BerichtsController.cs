@@ -24,21 +24,31 @@ namespace AMEL2.Controllers
             StringWriter sw = new StringWriter();
 
             //First line for column names
-            sw.WriteLine("\"ID\",\"Date\",\"Description\"");
+            sw.WriteLine("\"Projekt\",\"Anlage\",\"Bereich\",\"Aggregat\",\"AKZ\",\"Bezeichnung\",\"Antriebsart\",\"Rep-Schalter\",\"Ex-Schutz\",\"Bemerkungen\",\"Änd-Index\"");
 
             System.Collections.Generic.List<Bericht> list = getList_admser(sortOrder,  searchString);
 
             foreach (Bericht item in list)
             {
-                sw.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\"",
+                sw.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",\"{8}\",\"{9}\",\"{10}\",\"{11}\"",
                                            item.Projekt,
                                            item.s1,
-                                           item.s2));
+                                           item.s2,
+                                           item.s3,
+                                           item.s4,
+                                           item.s5,
+                                           item.s6,
+                                           item.s7,
+                                           item.s8,
+                                           item.s9,
+                                           item.s10,
+                                           item.s11
+                                           ));
             }
 
-            Response.AddHeader("Content-Disposition", "attachment; filename=Abtriebsliste EMSR.csv");
-            Response.ContentType = "text/csv";
-            Response.ContentEncoding = System.Text.Encoding.GetEncoding("utf-8");
+            Response.AddHeader("Content-Disposition", "attachment; filename=Aggregatestammdaten.xlsx");
+            Response.ContentType = "application/ms-excel";
+            //Response.ContentEncoding = System.Text.Encoding.GetEncoding("unicode");
             Response.Write(sw);
             Response.End();
         }
@@ -47,7 +57,7 @@ namespace AMEL2.Controllers
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
             var bers = from s in db.Berichts select s;
-            bers = bers.Where(p => p.BN == 22 && p.Projekt == 141303);
+            bers = bers.Where(p => p.BN == 1 && p.Projekt == 170722);
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.Equals("All"))

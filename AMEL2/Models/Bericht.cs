@@ -83,6 +83,25 @@ namespace AMEL2.Models
             listYesNo = data.ToList();
             return listYesNo;
         }
+        public List<SelectListItem> getListAntriebsart()
+        {
+            List<SelectListItem> listYesNo = new List<SelectListItem>();
+            var data = new[]{
+                 new SelectListItem{ Value="Leistungsabgang",Text="Leistungsabgang"},
+                 new SelectListItem{ Value="Direktantrieb",Text="Direktantrieb"},
+                 new SelectListItem{ Value="Stern-Dreieck-Anlauf",Text="Stern-Dreieck-Anlauf"},
+                 new SelectListItem{ Value="Sanftanlauf",Text="Sanftanlauf"},
+                 new SelectListItem{ Value="FU-Antrieb",Text="FU-Antrieb"},
+                 new SelectListItem{ Value="2-Drehzahlen Dahlander",Text="2-Drehzahlen Dahlander"},
+                 new SelectListItem{ Value="2-Drehrichtungen Matic-Antrieb",Text="2-Drehrichtungen Matic-Antrieb"},
+                 new SelectListItem{ Value="Pneumatikantrieb",Text="Pneumatikantrieb"},
+                 new SelectListItem{ Value="2-Drehrichtungen",Text="2-Drehrichtungen"},
+                 new SelectListItem{ Value="Magnetventil elektrisch",Text="Magnetventil elektrisch"},
+                 new SelectListItem{ Value="Magnetventil Pneumatikantrieb",Text="Magnetventil Pneumatikantrieb"},
+             };
+            listYesNo = data.ToList();
+            return listYesNo;
+        }
     }
     
 }
