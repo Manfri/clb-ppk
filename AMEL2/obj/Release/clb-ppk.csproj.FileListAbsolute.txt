@@ -218,3 +218,5 @@ C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\clb-ppk.csproj.CoreCompileInputs.cache
 C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\clb-ppk.csproj.CopyComplete
 C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\AMEL2.dll
 C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\AMEL2.pdb
+C:\AMEL WEB\clb-ppk\AMEL2\bin\EPPlus.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\EPPlus.xml

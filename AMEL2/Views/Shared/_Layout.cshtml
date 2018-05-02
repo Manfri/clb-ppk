@@ -79,26 +79,49 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Aggregate<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
-                        <li>@Html.ActionLink("Aggregatemaschinendaten", "old_advmt", "Berichts")</li>
-                        <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
+                        @if (Request.IsAuthenticated && (HttpContext.Current.User.IsInRole("canEdit") || HttpContext.Current.User.IsInRole("canNoEdit")))
+    {
+                    <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
+                    <li>@Html.ActionLink("Aggregatemaschinendaten", "old_advmt", "Berichts")</li>
+                    <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
+}
+else
+{
+                    <li></li>
+}
                     </ul>
                 </li>
-                              
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Messstellen<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Messstellenstammdaten", "old_msa", "Berichts")</li>
-                            <li>@Html.ActionLink("Messstellen Zusätzliche Daten", "old_msb", "Berichts")</li>
-                            @*<li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>*@
-                        </ul>
-                    </li>
-    
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Messstellen<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        @if (Request.IsAuthenticated && (HttpContext.Current.User.IsInRole("canEdit") || HttpContext.Current.User.IsInRole("canNoEdit")))
+    {
+                    <li>@Html.ActionLink("Messstellenstammdaten", "old_msa", "Berichts")</li>
+                    <li>@Html.ActionLink("Messstellen Zusätzliche Daten", "old_msb", "Berichts")</li>
+}
+else
+{
+                    <li></li>
+}
+                       
+                    </ul>
+                </li>
+
 
                 <li>@Html.ActionLink("Anlagendokumentation", "old_mdvmt", "Berichts")</li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                @Html.Partial("_LoginPartial")
+                @*<li><a class="navbar-brand-small" href="#">@GlobalVariables.Email</a></li>
+            @if (string.IsNullOrEmpty(GlobalVariables.Email))
+            {
+                <li>@Html.ActionLink("Anmelden", "Login", "Account")</li>
+            }
+            else
+            {
                 <li>@Html.ActionLink("Abmelden", "Logoff", "Home")</li>
+            }*@
             </ul>
         </div>
     </nav>
